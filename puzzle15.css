@@ -1,0 +1,298 @@
+/*Animations*/
+		.up{
+			animation-name: moveUp;
+			animation-duration: 1s;
+		}
+			@keyframes moveUp {
+		  		from {transform: translateY(0px);}
+		  		to {transform: translateY(-104px);}
+			}	
+
+		.down{
+			animation-name: moveDown;
+			animation-duration: 1s;
+		}
+			@keyframes moveDown {
+		  		from {transform: translateY(0px);}
+		  		to {transform: translateY(104px);}
+			}
+		.left{
+			animation-name: moveLeft;
+			animation-duration: 1s;
+		}
+			@keyframes moveLeft {
+		  		from {transform: translateX(0px);}
+		  		to {transform: translateX(-104px);}
+			}
+
+		.right{
+			animation-name: moveRight;
+			animation-duration: 1s;
+		}
+			@keyframes moveRight {
+			  	from {transform: translateX(0px);}
+			  	to {transform: translateX(104px);}
+			}
+
+		/*end animations*/
+
+		#top{
+			text-align: center;
+		}
+		.w3cValidators{
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+		}
+		.w3cValidators img{
+			display: block;
+			width: 88px;
+			height: 31px;
+		}
+		.movablepiece{
+		}
+		.movablepiece:hover{
+			border: red solid 2px;
+			text-decoration: underline;
+			color: #006600;
+		}
+		#containerDiv{
+			margin: auto;
+			width:420px;
+			border: solid #8989ff  3px;
+			border-radius: 25px;
+			padding: 15px;
+		}
+		#winningDiv{
+			text-align: center;
+		}
+		td div{
+			height:100px;
+			width:100px;
+			border: black solid 2px;
+			line-height: 100px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 32pt;
+			color:	#585858;
+			text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+		}
+		.bgSquare {
+			background-image: url("images/boxResize.png");
+		}
+
+		.bgMario1 {
+			background-image: url("images/marioResize.jpg");
+		}
+
+		.bgMario2 {
+			background-image: url("images/marioPixelResize.png");
+		}
+		.bgLuigi {
+			background-image: url("images/luigi.png");
+		}
+		table{
+			border-collapse: collapse;
+			margin:auto;
+		}
+		td{
+			padding:0;
+		}
+		/*blank div background*/
+		.blank{
+			background-image: none;
+			background-color: white;
+			border: none;
+		}
+		.blank::before{
+			content: "";
+		}
+
+		/*
+		all the following div classes have ::before after them, in order to have the content(the text in the div) be in the css rather than in the html.(content: attribute needs to
+		be in a pseudo element like ::before and not the class itself according to some research on google) . So when the class of the divs are changed in the javascript, the correct 
+		number will be shown and nothing other than the classes needs to be changed.. If the number text was written in the html instead of in ::before, everytime the squares are swapped you would also need to do something like 
+		document.getElementByIndex().innherhtml = "1"(or whatever number) in addition to changing the classes in the javascript
+		*/
+		.pic1{
+			background-position: 0px 0px; /*position of background image*/
+		}
+		.pic1::before{
+			content: "1"; /*the content is the text in the div*/
+		}
+		.pic2{
+			background-position: -100px 0px;
+		}
+		.pic2::before{
+			content: "2";
+		}
+		.pic3{
+			background-position: -200px 0px;
+		}
+		.pic3::before{
+			content: "3";
+		}
+		.pic4{
+			background-position: -300px 0px;
+		}
+		.pic4::before{
+			content: "4";
+		}
+
+
+		.pic5{
+			background-position: 0px -100px;
+		}
+		.pic5::before{
+			content: "5";
+		}
+		.pic6{
+			background-position: -100px -100px;
+		}
+		.pic6::before{
+			content: "6";
+		}
+		.pic7{
+			background-position: -200px -100px;
+		}
+		.pic7::before{
+			content: "7";
+		}
+		.pic8{
+			background-position: -300px -100px;
+		}
+		.pic8::before{
+			content: "8";
+		}
+
+
+		.pic9{
+			background-position: 0px -200px;
+		}
+		.pic9::before{
+			content: "9";
+		}
+		.pic10{
+			background-position: -100px -200px;
+		}
+		.pic10::before{
+			content: "10";
+		}
+		.pic11{
+			background-position: -200px -200px;
+		}
+		.pic11::before{
+			content: "11";
+		}
+		.pic12{
+			background-position: -300px -200px;
+		}
+		.pic12::before{
+			content: "12";
+		}
+
+
+		.pic13{
+			background-position: 0px -300px;
+		}
+		.pic13::before{
+			content: "13";
+		}
+		.pic14{
+			background-position: -100px -300px;
+		}
+		.pic14::before{
+			content: "14";
+		}
+		.pic15{
+			background-position: -200px -300px;
+		}
+		.pic15::before{
+			content: "15";
+		}
+	
+		.buttons {
+			font-size: 20px;
+			margin-right: 20px;
+			color: white;
+			background-color: black;
+			font-weight: bold;
+			border-radius: 4px;
+			opacity: 0.9;
+		}
+		#buttons , #shufflebtn{
+			margin: auto;
+			line-height: 100px;
+			text-align: center;
+		}
+		#winningDiv {
+			background-image: url('images/confetti.gif');
+			background-repeat: no-repeat;
+  			background-size: 100% 100%;
+			height:1000px;
+			width:100%;
+			line-height: 100px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 32pt;
+			color:	#585858;
+			display: none;
+			position: absolute;
+		}
+		#text {
+			font-size: 100px;
+			color:	#585858;
+			margin: auto;
+			text-align: center;
+			position: relative;
+			animation: colors 5s linear 0s infinite;
+		}
+		@keyframes colors
+		{
+		    0% 
+		    {
+		        color: purple;
+		        font-size: 110px;
+		    }
+		    14% 
+		    {
+		        color: red;
+		        font-size: 130px;
+		    }
+		    28% 
+		    {
+		        color: orange;
+		        font-size: 150px;
+		    }
+		    42% 
+		    {
+		        color: #968c4b;
+		        font-size: 150px;
+		    }
+		    56% 
+		    {
+		        color: green;
+		        font-size: 140px;
+		    }
+		    70% 
+		    {
+		        color: blue;
+		        font-size: 130px;
+		    }
+		    84% 
+		    {
+		        color: indigo;
+		        font-size: 120px;
+		    }
+		    100% 
+		    {
+		        color: purple;
+		        font-size: 110px;
+		    }
+		}
+		h1,h2
+		{
+			text-align: center;
+		}
